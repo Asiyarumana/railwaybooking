@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PNR Status - Railway Reservation</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-train"></i>
+                <span>RailBook</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="pnr.html" class="nav-link active">PNR Status</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- PNR Search Section -->
+    <section class="pnr-section">
+        <div class="container">
+            <div class="pnr-card">
+                <h1 class="pnr-title">Check PNR Status</h1>
+                <p class="pnr-subtitle">Enter your PNR number to check the current status of your booking</p>
+                
+                <form class="pnr-form" id="pnrForm">
+                    <div class="form-group">
+                        <label for="pnr-number">PNR Number</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-ticket-alt"></i>
+                            <input type="text" id="pnr-number" name="pnr" placeholder="Enter 10-digit PNR number" 
+                                   pattern="[0-9]{10}" maxlength="10" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-search"></i>
+                            Check Status
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- PNR Results Section (Hidden by default) -->
+    <section class="pnr-results" id="pnrResults" style="display: none;">
+        <div class="container">
+            <div class="result-card">
+                <div class="result-header">
+                    <h2>PNR Status Result</h2>
+                    <span class="pnr-number-display">PNR: <strong id="displayPnr">1234567890</strong></span>
+                </div>
+                
+                <div class="journey-summary">
+                    <div class="route-info">
+                        <div class="station">
+                            <span class="station-name">New Delhi (NDLS)</span>
+                            <span class="station-time">16:55</span>
+                        </div>
+                        <div class="journey-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                        <div class="station">
+                            <span class="station-name">Mumbai Central (MMCT)</span>
+                            <span class="station-time">09:20</span>
+                        </div>
+                    </div>
+                    
+                    <div class="train-info">
+                        <h3>Rajdhani Express (12951)</h3>
+                        <p>Journey Date: 15 Dec 2024</p>
+                    </div>
+                </div>
+                
+                <div class="passenger-status">
+                    <h3>Passenger Status</h3>
+                    <div class="passenger-list">
+                        <div class="passenger-item">
+                            <div class="passenger-details">
+                                <span class="passenger-name">Rahul Kumar</span>
+                                <span class="passenger-age">Age: 28</span>
+                            </div>
+                            <div class="status-badge confirmed">
+                                <i class="fas fa-check-circle"></i>
+                                Confirmed
+                            </div>
+                            <div class="seat-info">
+                                <span class="coach">Coach: B1</span>
+                                <span class="seat">Seat: 45</span>
+                            </div>
+                        </div>
+                        
+                        <div class="passenger-item">
+                            <div class="passenger-details">
+                                <span class="passenger-name">Priya Sharma</span>
+                                <span class="passenger-age">Age: 25</span>
+                            </div>
+                            <div class="status-badge waiting">
+                                <i class="fas fa-clock"></i>
+                                Waitlist 12
+                            </div>
+                            <div class="seat-info">
+                                <span class="coach">Coach: -</span>
+                                <span class="seat">Seat: -</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="booking-summary">
+                    <div class="summary-item">
+                        <span class="label">Booking Class:</span>
+                        <span class="value">AC 2 Tier (2A)</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="label">Total Fare:</span>
+                        <span class="value">₹4,900</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="label">Booking Date:</span>
+                        <span class="value">10 Dec 2024</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="label">Chart Status:</span>
+                        <span class="value">Prepared</span>
+                    </div>
+                </div>
+                
+                <div class="action-buttons">
+                    <button class="btn btn-secondary" onclick="printTicket()">
+                        <i class="fas fa-print"></i>
+                        Print Ticket
+                    </button>
+                    <button class="btn btn-primary" onclick="downloadTicket()">
+                        <i class="fas fa-download"></i>
+                        Download Ticket
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sample PNR Numbers for Demo -->
+    <section class="demo-section">
+        <div class="container">
+            <div class="demo-card">
+                <h3>Demo PNR Numbers</h3>
+                <p>Use these sample PNR numbers to test the functionality:</p>
+                <div class="demo-pnrs">
+                    <button class="demo-pnr-btn" onclick="fillPnr('1234567890')">1234567890 - Confirmed</button>
+                    <button class="demo-pnr-btn" onclick="fillPnr('9876543210')">9876543210 - Waitlist</button>
+                    <button class="demo-pnr-btn" onclick="fillPnr('5555555555')">5555555555 - Cancelled</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>RailBook</h3>
+                    <p>Your trusted partner for railway reservations</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="pnr.html">PNR Status</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-phone"></i> +91 1800-111-139</p>
+                    <p><i class="fas fa-envelope"></i> support@railbook.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 RailBook. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // PNR Form Submission
+        document.getElementById('pnrForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const pnrNumber = document.getElementById('pnr-number').value;
+            
+            if (pnrNumber.length === 10 && /^\d{10}$/.test(pnrNumber)) {
+                document.getElementById('displayPnr').textContent = pnrNumber;
+                document.getElementById('pnrResults').style.display = 'block';
+                
+                // Scroll to results
+                document.getElementById('pnrResults').scrollIntoView({ 
+                    behavior: 'smooth' 
+                });
+            } else {
+                alert('Please enter a valid 10-digit PNR number');
+            }
+        });
+
+        // Demo PNR filling
+        function fillPnr(pnr) {
+            document.getElementById('pnr-number').value = pnr;
+            document.getElementById('pnr-number').focus();
+        }
+
+        // Action button functions
+        function printTicket() {
+            alert('Print functionality would be implemented here');
+        }
+
+        function downloadTicket() {
+            alert('Download functionality would be implemented here');
+        }
+    </script>
+</body>
+</html>

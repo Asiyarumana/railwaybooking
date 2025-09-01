@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results - RailBook</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-train"></i>
+                <span>RailBook</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="pnr.html" class="nav-link">PNR Status</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Results Header -->
+    <section class="results-header">
+        <div class="container">
+            <div class="search-summary">
+                <h1>Search Results</h1>
+                <div class="journey-details">
+                    <div class="journey-info">
+                        <span class="station">Mumbai Central</span>
+                        <i class="fas fa-arrow-right"></i>
+                        <span class="station">Delhi</span>
+                    </div>
+                    <div class="journey-meta">
+                        <span><i class="fas fa-calendar"></i> 15 Dec 2024</span>
+                        <span><i class="fas fa-users"></i> 2 Adults</span>
+                        <span><i class="fas fa-chair"></i> AC 2 Tier</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="results-section">
+        <div class="container">
+            <!-- Results List -->
+            <div class="results-list">
+                <!-- Train Card 1 -->
+                <div class="train-result-card">
+                    <div class="train-basic-info">
+                        <div class="train-header">
+                            <div class="train-info">
+                                <h3>Rajdhani Express</h3>
+                                <p class="train-number">12951</p>
+                            </div>
+                            <div class="train-rating">
+                                <span class="rating-badge">4.2 ★</span>
+                                <span class="rating-text">Excellent</span>
+                            </div>
+                        </div>
+                        
+                        <div class="train-route">
+                            <div class="route-info">
+                                <div class="departure">
+                                    <div class="time">16:30</div>
+                                    <div class="station">Mumbai Central</div>
+                                    <div class="date">Today</div>
+                                </div>
+                                <div class="journey-line">
+                                    <div class="line"></div>
+                                    <div class="duration">16h 15m</div>
+                                    <div class="line"></div>
+                                </div>
+                                <div class="arrival">
+                                    <div class="time">08:45</div>
+                                    <div class="station">Delhi</div>
+                                    <div class="date">Tomorrow</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="train-summary">
+                            <div class="fare-info">
+                                <span class="fare">₹2,450</span>
+                                <span class="per-person">per person</span>
+                            </div>
+                            <div class="action-buttons">
+                                <button class="btn btn-secondary btn-sm" onclick="toggleDetails('train1')">
+                                    <i class="fas fa-eye"></i>
+                                    <span class="btn-text">View Details</span>
+                                </button>
+                                <button class="btn btn-primary btn-sm" onclick="bookNow('12951')">
+                                    <i class="fas fa-ticket-alt"></i>
+                                    Book Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Expandable Details Section -->
+                    <div class="train-details-expanded" id="train1">
+                        <div class="details-content">
+                            <div class="details-grid">
+                                <div class="detail-section">
+                                    <h4><i class="fas fa-info-circle"></i> Train Information</h4>
+                                    <div class="detail-item">
+                                        <span class="label">Train Type:</span>
+                                        <span class="value">Express</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <span class="label">Duration:</span>
+                                        <span class="value">16h 15m</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <span class="label">Distance:</span>
+                                        <span class="value">1,384 km</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <span class="label">Platform:</span>
+                                        <span class="value">Platform 3</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="detail-section">
+                                    <h4><i class="fas fa-chair"></i> Available Classes</h4>
+                                    <div class="class-availability">
+                                        <div class="class-item">
+                                            <span class="class-name">1AC</span>
+                                            <span class="class-status available">Available</span>
+                                            <span class="class-price">₹4,250</span>
+                                        </div>
+                                        <div class="class-item">
+                                            <span class="class-name">2AC</span>
+                                            <span class="class-status available">Available</span>
+                                            <span class="class-price">₹2,450</span>
+                                        </div>
+                                        <div class="class-item">
+                                            <span class="class-name">3AC</span>
+                                            <span class="class-status limited">Limited</span>
+                                            <span class="class-price">₹1,850</span>
+                                        </div>
+                                        <div class="class-item">
+                                            <span class="class-name">Sleeper</span>
+                                            <span class="class-status available">Available</span>
+                                            <span class="class-price">₹750</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="facilities-section">
+                                <h4><i class="fas fa-star"></i> Onboard Facilities</h4>
+                                <div class="facilities-grid">
+                                    <div class="facility-item">
+                                        <i class="fas fa-wifi"></i>
+                                        <span>WiFi</span>
+                                    </div>
+                                    <div class="facility-item">
+                                        <i class="fas fa-utensils"></i>
+                                        <span>Pantry</span>
+                                    </div>
+                                    <div class="facility-item">
+                                        <i class="fas fa-tv"></i>
+                                        <span>Entertainment</span>
+                                    </div>
+                                    <div class="facility-item">
+                                        <i class="fas fa-snowflake"></i>
+                                        <span>AC</span>
+                                    </div>
+                                    <div class="facility-item">
+                                        <i class="fas fa-bed"></i>
+                                        <span>Bedding</span>
+                                    </div>
+                                    <div class="facility-item">
+                                        <i class="fas fa-coffee"></i>
+                                        <span>Refreshments</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Train Card 2 -->
+                <div class="train-result-card">
+                    <div class="train-basic-info">
+                        <div class="train-header">
+                            <div class="train-info">
+                                <h3>Duronto Express</h3>
+                                <p class="train-number">12213</p>
+                            </div>
+                            <div class="train-rating">
+                                <span class="rating-badge">4.0 ★</span>
+                                <span class="rating-text">Very Good</span>
+                            </div>
+                        </div>
+                        
+                        <div class="train-route">
+                            <div class="route-info">
+                                <div class="departure">
+                                    <div class="time">23:15</div>
+                                    <div class="station">Mumbai Central</div>
+                                    <div class="date">Today</div>
+                                </div>
+                                <div class="journey-line">
+                                    <div class="line"></div>
+                                    <div class="duration">16h 15m</div>
+                                    <div class="line"></div>
+                                </div>
+                                <div class="arrival">
+                                    <div class="time">15:30</div>
+                                    <div class="station">Delhi</div>
+                                    <div class="date">Tomorrow</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="train-summary">
+                            <div class="fare-info">
+                                <span class="fare">₹2,150</span>
+                                <span class="per-person">per person</span>
+                            </div>
+                            <div class="action-buttons">
+                                <button class="btn btn-secondary btn-sm" onclick="toggleDetails('train2')">
+                                    <i class="fas fa-eye"></i>
+                                    <span class="btn-text">View Details</span>
+                                </button>
+                                <button class="btn btn-primary btn-sm" onclick="bookNow('12213')">
+                                    <i class="fas fa-ticket-alt"></i>
+                                    Book Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Expandable Details Section -->
+                    <div class="train-details-expanded" id="train2">
+                        <div class="details-content">
+                            <div class="details-grid">
+                                <div class="detail-section">
+                                    <h4><i class="fas fa-info-circle"></i> Train Information</h4>
+                                    <div class="detail-item">
+                                        <span class="label">Train Type:</span>
+                                        <span class="value">Superfast</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <span class="label">Duration:</span>
+                                        <span class="value">16h 15m</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <span class="label">Distance:</span>
+                                        <span class="value">1,384 km</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <span class="label">Platform:</span>
+                                        <span class="value">Platform 1</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="detail-section">
+                                    <h4><i class="fas fa-chair"></i> Available Classes</h4>
+                                    <div class="class-availability">
+                                        <div class="class-item">
+                                            <span class="class-name">2AC</span>
+                                            <span class="class-status available">Available</span>
+                                            <span class="class-price">₹2,150</span>
+                                        </div>
+                                        <div class="class-item">
+                                            <span class="class-name">3AC</span>
+                                            <span class="class-status available">Available</span>
+                                            <span class="class-price">₹1,650</span>
+                                        </div>
+                                        <div class="class-item">
+                                            <span class="class-name">Sleeper</span>
+                                            <span class="class-status limited">Limited</span>
+                                            <span class="class-price">₹650</span>
+                                        </div>
+                                        <div class="class-item">
+                                            <span class="class-name">General</span>
+                                            <span class="class-status available">Available</span>
+                                            <span class="class-price">₹350</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="facilities-section">
+                                <h4><i class="fas fa-star"></i> Onboard Facilities</h4>
+                                <div class="facilities-grid">
+                                    <div class="facility-item">
+                                        <i class="fas fa-wifi"></i>
+                                        <span>WiFi</span>
+                                    </div>
+                                    <div class="facility-item">
+                                        <i class="fas fa-utensils"></i>
+                                        <span>Pantry</span>
+                                    </div>
+                                    <div class="facility-item">
+                                        <i class="fas fa-snowflake"></i>
+                                        <span>AC</span>
+                                    </div>
+                                    <div class="facility-item">
+                                        <i class="fas fa-bed"></i>
+                                        <span>Bedding</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Train Card 3 -->
+                <div class="train-result-card">
+                    <div class="train-basic-info">
+                        <div class="train-header">
+                            <div class="train-info">
+                                <h3>August Kranti</h3>
+                                <p class="train-number">12953</p>
+                            </div>
+                            <div class="train-rating">
+                                <span class="rating-badge">3.8 ★</span>
+                                <span class="rating-text">Good</span>
+                            </div>
+                        </div>
+                        
+                        <div class="train-route">
+                            <div class="route-info">
+                                <div class="departure">
+                                    <div class="time">17:40</div>
+                                    <div class="station">Mumbai Central</div>
+                                    <div class="date">Today</div>
+                                </div>
+                                <div class="journey-line">
+                                    <div class="line"></div>
+                                    <div class="duration">16h 35m</div>
+                                    <div class="line"></div>
+                                </div>
+                                <div class="arrival">
+                                    <div class="time">10:15</div>
+                                    <div class="station">Delhi</div>
+                                    <div class="date">Tomorrow</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="train-summary">
+                            <div class="fare-info">
+                                <span class="fare">₹1,850</span>
+                                <span class="per-person">per person</span>
+                            </div>
+                            <div class="action-buttons">
+                                <button class="btn btn-secondary btn-sm" onclick="toggleDetails('train3')">
+                                    <i class="fas fa-eye"></i>
+                                    <span class="btn-text">View Details</span>
+                                </button>
+                                <button class="btn btn-primary btn-sm" onclick="bookNow('12953')">
+                                    <i class="fas fa-ticket-alt"></i>
+                                    Book Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Expandable Details Section -->
+                    <div class="train-details-expanded" id="train3">
+                        <div class="details-content">
+                            <div class="details-grid">
+                                <div class="detail-section">
+                                    <h4><i class="fas fa-info-circle"></i> Train Information</h4>
+                                    <div class="detail-item">
+                                        <span class="label">Train Type:</span>
+                                        <span class="value">Express</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <span class="label">Duration:</span>
+                                        <span class="value">16h 35m</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <span class="label">Distance:</span>
+                                        <span class="value">1,384 km</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <span class="label">Platform:</span>
+                                        <span class="value">Platform 2</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="detail-section">
+                                    <h4><i class="fas fa-chair"></i> Available Classes</h4>
+                                    <div class="class-availability">
+                                        <div class="class-item">
+                                            <span class="class-name">3AC</span>
+                                            <span class="class-status available">Available</span>
+                                            <span class="class-price">₹1,850</span>
+                                        </div>
+                                        <div class="class-item">
+                                            <span class="class-name">Sleeper</span>
+                                            <span class="class-status available">Available</span>
+                                            <span class="class-price">₹750</span>
+                                        </div>
+                                        <div class="class-item">
+                                            <span class="class-name">General</span>
+                                            <span class="class-status available">Available</span>
+                                            <span class="class-price">₹450</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="facilities-section">
+                                <h4><i class="fas fa-star"></i> Onboard Facilities</h4>
+                                <div class="facilities-grid">
+                                    <div class="facility-item">
+                                        <i class="fas fa-utensils"></i>
+                                        <span>Pantry</span>
+                                    </div>
+                                    <div class="facility-item">
+                                        <i class="fas fa-snowflake"></i>
+                                        <span>AC</span>
+                                    </div>
+                                    <div class="facility-item">
+                                        <i class="fas fa-bed"></i>
+                                        <span>Bedding</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Function to toggle train details
+        function toggleDetails(trainId) {
+            const detailsSection = document.getElementById(trainId);
+            const button = event.target.closest('button');
+            const buttonText = button.querySelector('.btn-text');
+            const buttonIcon = button.querySelector('i');
+            
+            if (detailsSection.classList.contains('expanded')) {
+                detailsSection.classList.remove('expanded');
+                buttonText.textContent = 'View Details';
+                buttonIcon.className = 'fas fa-eye';
+            } else {
+                detailsSection.classList.add('expanded');
+                buttonText.textContent = 'Hide Details';
+                buttonIcon.className = 'fas fa-eye-slash';
+            }
+        }
+
+        // Function to book train
+        function bookNow(trainNumber) {
+            window.location.href = `booking.html?train=${trainNumber}`;
+        }
+    </script>
+</body>
+</html>

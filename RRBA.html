@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RailBook - Your Journey Starts Here</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Welcome Page Container -->
+    <div class="welcome-page">
+        <!-- Hero Background -->
+        <div class="welcome-hero">
+            <div class="welcome-content">
+                <!-- App Logo -->
+                <div class="welcome-logo">
+                    <div class="logo-circle">
+                        <i class="fas fa-train"></i>
+                    </div>
+                </div>
+                
+                <!-- App Name -->
+                <h1 class="app-title">RailBook</h1>
+                
+                <!-- Tagline -->
+                <p class="app-tagline">Your Journey Starts Here</p>
+                
+                <!-- Start Button -->
+                <button class="start-button" onclick="window.location.href='index.html'">
+                    <span class="btn-text">Start</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Why Choose RailBook Section -->
+        <section class="why-choose-section">
+            <div class="container">
+                <h2 class="section-title">Why Choose RailBook?</h2>
+                
+                <div class="features-grid">
+                    <!-- Feature 1 -->
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3 class="feature-title">Instant Booking</h3>
+                            <p class="feature-description">Book tickets in seconds with our streamlined process</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Feature 2 -->
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3 class="feature-title">Secure Payments</h3>
+                            <p class="feature-description">Multiple payment options with bank-grade security</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Feature 3 -->
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3 class="feature-title">Mobile Friendly</h3>
+                            <p class="feature-description">Book tickets on any device, anywhere, anytime</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Feature 4 -->
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3 class="feature-title">24/7 Support</h3>
+                            <p class="feature-description">Round-the-clock customer support</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Add smooth entrance animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const welcomeContent = document.querySelector('.welcome-content');
+            const featuresGrid = document.querySelector('.features-grid');
+            const featureItems = document.querySelectorAll('.feature-item');
+            
+            // Animate welcome content
+            setTimeout(() => {
+                welcomeContent.classList.add('animate-in');
+            }, 200);
+            
+            // Animate features grid
+            setTimeout(() => {
+                featuresGrid.classList.add('animate-in');
+            }, 400);
+            
+            // Animate feature items with stagger
+            featureItems.forEach((item, index) => {
+                setTimeout(() => {
+                    item.classList.add('animate-in');
+                }, 600 + (index * 100));
+            });
+        });
+    </script>
+</body>
+</html>
