@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RailBook - Book Your Train Tickets</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-train"></i>
+                <span>RailBook</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link active">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="pnr.html" class="nav-link">PNR Status</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <h1 class="hero-title">Book Your Train Tickets Easily</h1>
+            <p class="hero-subtitle">Fast, secure, and reliable railway reservations at your fingertips</p>
+        </div>
+    </section>
+
+    <!-- Search Section -->
+    <section class="search-section">
+        <div class="container">
+            <div class="search-card">
+                <h2 class="search-title">Search Trains</h2>
+                <form class="search-form" action="results.html">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="from-station">From Station</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <input type="text" id="from-station" name="from" placeholder="Enter departure station" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="to-station">To Station</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <input type="text" id="to-station" name="to" placeholder="Enter arrival station" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="journey-date">Journey Date</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-calendar"></i>
+                                <input type="date" id="journey-date" name="date" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="travel-class">Travel Class</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-chair"></i>
+                                <select id="travel-class" name="class" required>
+                                    <option value="">Select Class</option>
+                                    <option value="1ac">1st AC</option>
+                                    <option value="2ac">2nd AC</option>
+                                    <option value="3ac">3rd AC</option>
+                                    <option value="sleeper">Sleeper</option>
+                                    <option value="general">General</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-search"></i>
+                            Search Trains
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>RailBook</h3>
+                    <p>Your trusted partner for railway reservations</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="pnr.html">PNR Status</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-phone"></i> +91 1800-111-139</p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:support@railbook.com">support@railbook.com</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Copyright © 2024 RailBook. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
